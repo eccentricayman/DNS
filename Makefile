@@ -1,14 +1,14 @@
 GCC = gcc -g
 
-compile: NOTspotify.c
-	gcc NOTspotify.c -o tuneztest
+compile: songs.c playlists.c
+	gcc NOTspotify.c songs.c -o DefinetelyNotSpotify
 
 clean:
-	rm -rf tuneztest
+	rm -rf DefinetelyNotSpotify
 	rm -rf *~
 
 run:
-	./tuneztest
+	./DefinetelyNotSpotify
 
 debug:
-	gcc NOTspotify.c -g -o tuneztest
+	gcc NOTspotify.c -g -o DefinetelyNotSpotify
