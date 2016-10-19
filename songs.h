@@ -16,6 +16,6 @@ struct song_node * first_artist_song(struct song_node * start, char artistName[]
 
 struct song_node * random_element(struct song_node * start);
 
-struct song_node * remove_song(struct song_node * start, struct song_node * toDelete);
+void remove_song(struct song_node * start, char songName[], char artistName[]);
 
-void free_list(struct song_node * start);
+struct song_node * free_list(struct song_node * start);
