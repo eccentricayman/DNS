@@ -89,3 +89,33 @@ struct song_node * free_list(struct song_node * start) {
     free(start);
     return start;
 }
+
+int main() {
+    //stolen from calvin and giovanni
+    song_node *list = insert_order(NULL, "Highway to Hell", "AC/DC");
+    list = insert_order(list, "Everlong", "Foo Fighters");
+    list = insert_order(list, "Hips Don't Lie", "Shakira");
+    list = insert_order(list, "Something Good Can Work", "Two Door Cinema Club");
+    list = insert_order(list, "American Idiot", "Green Day");
+  
+    print_list(list);
+    printf("Finding Everlong: %s\n", find_song(list, "Everlong")->name);
+    printf("Finding first name by foo fighters: %s\n", first_artist_song(list, "Foo Fighters")->name);
+    printf("Getting random name: %s\n", random_element(list)->name);
+    printf("Removing 'Hips Don't Lie'...\n");
+    remove_song(list, "Hips Don't Lie", "Shakira");
+    printf("\nRemoving 'American Idiot'...\n");
+    remove_song(list, "American Idiot", "Green Day");
+    printf("\nRemoving 'Something Good Can Work'...\n");
+    remove_song(list, "Something Good Can Work", "Two Door Cinema Club");
+    print_list(list);
+  
+    printf("\nRemoving nonexistent name 'Hello'...\n");
+    remove_song(list, "Hello", "LOLOALDAOPWDNSBGERJNREK");
+    print_list(list);
+  
+    list = free_list(list);
+    print_list(list);
+    return 0;
+}
+
