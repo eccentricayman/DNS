@@ -1,13 +1,13 @@
-struct song_node * add_song(struct song_node * toIns);
+song_node * add_song(song_node * toIns);
 
-struct song_node * search_artist(struct song_node * start, char artistName[]);
+song_node * search_artist(song_node * start, char artistName[]);
 
-void print_entry(struct song_node * start, char letter);
+void print_entry(song_node * start, char letter);
 
-void print_artist_songs(struct song_node * start, char artist[]);
+void print_artist_songs(song_node * start, char artist[]);
 
-void shuffle(struct song_node * start);
+void shuffle(song_node * start);
 
-struct song_node * remove_song(struct song_node * start, struct song_node * toRemove);
+song_node * remove_song(song_node * start, song_node * toRemove);
 
-void remove_all(struct song_node * start);
+void remove_all(song_node * start);
