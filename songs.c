@@ -38,13 +38,17 @@ song_node * insert_order(song_node * start, char newSong[], char newArtist[]) {
   return beginning;
 }
 
-void print_list(song_node * start) {
+void print_list(song_node * start) {/*
   printf("%s by %s \n", start->name, start->artist);
   if (start->next) {
     print_list(start->next);
   }
   else {
     printf("\n");
+    }*/
+  while (start) {
+    printf("%s by %s \n", start->name, start->artist);
+    start = start->next;
   }
 }
 
@@ -80,7 +84,8 @@ int length(song_node * start) {
 song_node * random_element(song_node * start) {
   srand(time(NULL));
   int ctr = rand() % length(start);
-  for (int i = 0 ; i < ctr ; i++) {
+  int i;
+  for (i = 0 ; i < ctr ; i++) {
     start = start->next;
   }
   return start;
@@ -99,7 +104,7 @@ void remove_song(song_node * start, char songName[], char artistName[]) {
 }
 
 song_node * free_list(song_node * start) {
-  song_node * temp = start; //SEG FAULT
+  song_node * temp = start;
   while (start) {
     start = start->next;
     free(temp);
