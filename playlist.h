@@ -1,13 +1,15 @@
-struct song_node * add_song(struct song_node * toIns);
+#include "songs.h"
 
-struct song_node * search_artist(struct song_node * start, char artistName[]);
+song_node * add_song(char songName[], char artistName[]);
 
-void print_entry(struct song_node * start, char letter);
+song_node * search_artist(char artistName[]);
 
-void print_artist_songs(struct song_node * start, char artist[]);
+void print_entry(char letter);
 
-void shuffle(struct song_node * start);
+void print_artist_songs(char artistName[]);
 
-struct song_node * remove_song(struct song_node * start, struct song_node * toRemove);
+void shuffle(song_node * start);
 
-void remove_all(struct song_node * start);
+song_node * remove_song(song_node * start, song_node * toRemove);
+
+void remove_all(song_node * start);
