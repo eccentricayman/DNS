@@ -1,6 +1,6 @@
-struct song_node add_song(struct song_node * toIns);
+struct song_node * add_song(struct song_node * toIns);
 
-struct song_node search_artist(struct song_node * start, char artistName[]);
+struct song_node * search_artist(struct song_node * start, char artistName[]);
 
 void print_entry(struct song_node * start, char letter);
 
