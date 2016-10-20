@@ -140,9 +140,10 @@ int main() {
   printf("\nRemoving nonexistent name 'Hello'...\n");
   list = remove_song_node(list, "Hello", "LOLOALDAOPWDNSBGERJNREK");
   print_list(list);
-  /*
+  
+  printf("\nFreeing list...\n");
   list = free_list(list);
-  print_list(list);*/
+  print_list(list);
   return 0;
 }
 
