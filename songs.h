@@ -16,10 +16,6 @@ song_node * first_artist_song(song_node * start, char artistName[]);
 
 song_node * random_element(song_node * start);
 
-<<<<<<< HEAD
-song_node * remove_song(song_node * start, char songName[], char artistName[]);
-=======
-void remove_song_node(song_node * start, char songName[], char artistName[]);
->>>>>>> c024689a7fb637c87623e6df62771a21aa6235ad
+song_node * remove_song_node(song_node * start, char songName[], char artistName[]);
 
 song_node * free_list(song_node * start);

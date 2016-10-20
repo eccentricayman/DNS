@@ -39,26 +39,10 @@ song_node * insert_order(song_node * start, char newSong[], char newArtist[]) {
 }
 
 void print_list(song_node * start) {
-<<<<<<< HEAD
-  /*
-    printf("%s by %s \n", start->name, start->artist);
-    if (start->next) {
-    print_list(start->next);
-    }
-    else {
-    printf("\n");
-    }
-  */
   while (start) {
     printf("%s - %s\n", start->artist, start->name);
     start = start->next;
   }
-=======
-	while (start) {
-		printf("%s by %s \n", start->name, start->artist);
-		start = start->next;
-	}
->>>>>>> c024689a7fb637c87623e6df62771a21aa6235ad
 }
 
 song_node * find_song(song_node * start, char songName[]) {
@@ -100,8 +84,7 @@ song_node * random_element(song_node * start) {
   return start;
 }
 
-<<<<<<< HEAD
-song_node * remove_song(song_node * start, char songName[], char artistName[]) {
+song_node * remove_song_node(song_node * start, char songName[], char artistName[]) {
   song_node * temp = start;
   if (!strcmp(start->name, songName) && !strcmp(start->artist, artistName)) {
     start = start->next;
@@ -114,22 +97,11 @@ song_node * remove_song(song_node * start, char songName[], char artistName[]) {
       temp = start->next;
       start->next = start->next->next;
       free(temp);
-      return beginning;
+      break;
     }
     start = start->next;
   }
-=======
-void remove_song_node(song_node * start, char songName[], char artistName[]) {
-	while (start->next) {
-		if (!strcmp(start->next->name, songName) && !strcmp(start->next->artist, artistName)) {
-			song_node * temp = start->next;
-			start->next = start->next->next;
-			free(temp);
-			break;
-		}
-		start = start->next;
-	}
->>>>>>> c024689a7fb637c87623e6df62771a21aa6235ad
+  return beginning;
 }
 
 song_node * free_list(song_node * start) {
@@ -149,44 +121,26 @@ int main() {
   list = insert_order(list, "Hips Don't Lie", "Shakira");
   list = insert_order(list, "Something Good Can Work", "Two Door Cinema Club");
   list = insert_order(list, "American Idiot", "Green Day");
-  
-<<<<<<< HEAD
+ 
   print_list(list);
   printf("\n");
   printf("Finding Everlong: %s\n", find_song(list, "Everlong")->name);
   printf("Finding first name by foo fighters: %s\n", first_artist_song(list, "Foo Fighters")->name);
   printf("Getting random name: %s\n", random_element(list)->name);
   printf("\n");
-  printf("Removing 'Hips Don't Lie'...\n");
-  list = remove_song(list, "Hips Don't Lie", "Shakira");
+  printf("Removing 'Highway to Hell'...\n");
+  list = remove_song_node(list, "Highway to Hell", "AC/DC");
   print_list(list);/*
   printf("\nRemoving 'American Idiot'...\n");
-  remove_song(list, "American Idiot", "Green Day");
+  list = remove_song_node(list, "American Idiot", "Green Day");
   printf("\nRemoving 'Something Good Can Work'...\n");
-  remove_song(list, "Something Good Can Work", "Two Door Cinema Club");
-  print_list(list);
+  list = remove_song_node(list, "Something Good Can Work", "Two Door Cinema Club");
+  print_list(list);*/
   
   printf("\nRemoving nonexistent name 'Hello'...\n");
-  remove_song(list, "Hello", "LOLOALDAOPWDNSBGERJNREK");
+  list = remove_song_node(list, "Hello", "LOLOALDAOPWDNSBGERJNREK");
   print_list(list);
-=======
-	print_list(list);
-	printf("Finding Everlong: %s\n", find_song(list, "Everlong")->name);
-	printf("Finding first name by foo fighters: %s\n", first_artist_song(list, "Foo Fighters")->name);
-	printf("Getting random name: %s\n", random_element(list)->name);
-	printf("Removing 'Hips Don't Lie'...\n");
-	remove_song_node(list, "Hips Don't Lie", "Shakira");
-	printf("\nRemoving 'American Idiot'...\n");
-	remove_song_node(list, "American Idiot", "Green Day");
-	printf("\nRemoving 'Something Good Can Work'...\n");
-	remove_song_node(list, "Something Good Can Work", "Two Door Cinema Club");
-	print_list(list);
-  
-	printf("\nRemoving nonexistent name 'Hello'...\n");
-	remove_song_node(list, "Hello", "LOLOALDAOPWDNSBGERJNREK");
-	print_list(list);
->>>>>>> c024689a7fb637c87623e6df62771a21aa6235ad
-
+  /*
   list = free_list(list);
   print_list(list);*/
   return 0;
