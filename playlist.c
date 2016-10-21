@@ -56,15 +56,20 @@ void print_library() {
 
 void shuffle() {
     song_node * tableP = *table;
+    song_node * newTable;
     while (tableP) {
         song_node * letterP = tableP;
         while (letterP) {
-            song_node * randNode = remove_song_node(letterP, random_element(letterP) -> name);
-            randNode -> next = letterP -> next;
-            letterP -> next = randNode;
-            letterP = letterP -> next;
+            newTable -> name = letterP -> name;
+            newTable -> artist = letterP -> artist;
+            newTable -> next = letterP -> next;
         }
         tableP++;
+    }
+    while (newTable) {
+        song_node * temp = remove_song_node(newTable, random_element(newTable) -> name);
+        printf("%s by %s", temp -> name, temp -> artist);
+        newTable = newTable -> next;
     }
 }
 
