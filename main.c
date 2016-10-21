@@ -26,6 +26,9 @@ int main() {
   printf("\nTesting print_library\n");
   print_library();
 
+  printf("\nTesting shuffle\n");
+  shuffle();
+
   printf("\nTesting remove_song\n");
   remove_song("Closer");
   print_library();
