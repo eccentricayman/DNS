@@ -9,4 +9,5 @@ clean:
 	rm *~
 
 debug:
-	gcc NOTspotify.c -g -o DefinitelyNotSpotify
+	gcc songs.h songs.c playlist.c main.c -g -o DefinitelyNotSpotify
+
