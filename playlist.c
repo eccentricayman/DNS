@@ -63,6 +63,7 @@ void shuffle() {
             newTable -> name = letterP -> name;
             newTable -> artist = letterP -> artist;
             newTable -> next = letterP -> next;
+            letterP = letterP -> next;
         }
         tableP++;
     }
