@@ -7,6 +7,10 @@ int main() {
   add_song("Closer", "Chainsmokers");
   add_song("Faded", "Alan Walker");
   add_song("All We Know", "Chainsmokers");
+  add_song("This One's For You", "David Guetta");
+  add_song("Please Don't Go", "Joel Adams");
+  add_song("Cold Water", "Major Lazer");
+  add_song("Wherever I Go", "One Republic");
   
   printf("\nTesting search_song\n");
   printf("%s\n", search_song("Closer")->name);

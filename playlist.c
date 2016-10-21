@@ -55,26 +55,22 @@ void print_library() {
 }
 
 void shuffle() {
-    printf("something?");
-    song_node * newTable;
-    printf("made table2");
-    for (int i = 0 ; i < 26 ; i++) {
-        song_node * letterP = table[i];
-        printf("letterz");
-        while (letterP) {
-            strcpy(newTable -> name, letterP -> name);
-            strcpy(newTable -> artist, letterP -> artist);
-            printf("newtablunext");
-            newTable -> next = letterP -> next;
-            letterP = letterP -> next;
-        }
+  song_node * temp = (song_node *)malloc(sizeof(song_node));
+  temp = NULL;
+  int i = 0;
+  song_node * a;
+  for (; i < 26; i++) {
+    a = table[i];
+    while (a) {
+      temp = insert_front(temp, a->name, a->artist);
+      a = a->next;
     }
-    while (newTable) {
-        printf("tempnodee");
-        song_node * temp = remove_song_node(newTable, random_element(newTable) -> name);
-        printf("%s by %s", temp -> name, temp -> artist);
-        newTable = newTable -> next;
-    }
+  }
+  while (temp) {
+    a = random_element(temp);
+    printf("%s\n", a->name);
+    temp = remove_song_node(temp, a->name);
+  }
 }
 
 void remove_song(char songName[]) {
