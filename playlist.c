@@ -60,8 +60,8 @@ void shuffle() {
     while (tableP) {
         song_node * letterP = tableP;
         while (letterP) {
-            newTable -> name = letterP -> name;
-            newTable -> artist = letterP -> artist;
+            strcpy(newTable -> name, letterP -> name);
+            strcpy(newTable -> artist, letterP -> artist);
             newTable -> next = letterP -> next;
             letterP = letterP -> next;
         }
