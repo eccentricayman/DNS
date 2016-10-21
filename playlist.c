@@ -55,7 +55,17 @@ void print_library() {
 }
 
 void shuffle() {
-  
+    song_node * tableP = *table;
+    while (tableP) {
+        song_node * letterP = tableP;
+        while (letterP) {
+            song_node * randNode = remove_song_node(letterP, random_element(letterP) -> name);
+            randNode -> next = letterP -> next;
+            letterP -> next = randNode;
+            letterP = letterP -> next;
+        }
+        tableP++;
+    }
 }
 
 void remove_song(char songName[]) {
