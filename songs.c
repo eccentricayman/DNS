@@ -84,16 +84,16 @@ song_node * random_element(song_node * start) {
   return start;
 }
 
-song_node * remove_song_node(song_node * start, char songName[], char artistName[]) {
+song_node * remove_song_node(song_node * start, char songName[]) {
   song_node * temp = start;
-  if (!strcmp(start->name, songName) && !strcmp(start->artist, artistName)) {
+  if (!strcmp(start->name, songName)) {
     start = start->next;
     free(temp);
     return start;
   }
   song_node * beginning = start;
   while (start->next) {
-    if (!strcmp(start->next->name, songName) && !strcmp(start->next->artist, artistName)) {
+    if (!strcmp(start->next->name, songName)) {
       temp = start->next;
       start->next = start->next->next;
       free(temp);
@@ -113,12 +113,12 @@ song_node * free_list(song_node * start) {
   }
   return start;
 }
-
+/*
 int main() {
   //stolen from calvin and giovanni
-  song_node *list = insert_order(NULL, "Highway to Hell", "AC/DC");
+  song_node *list = insert_order(NULL, "Closer", "Chainsmokers");
   list = insert_order(list, "Everlong", "Foo Fighters");
-  list = insert_order(list, "Hips Don't Lie", "Shakira");
+  list = insert_order(list, "All We Know", "Chainsmokers");
   list = insert_order(list, "Something Good Can Work", "Two Door Cinema Club");
   list = insert_order(list, "American Idiot", "Green Day");
  
@@ -130,12 +130,12 @@ int main() {
   printf("\n");
   printf("Removing 'Highway to Hell'...\n");
   list = remove_song_node(list, "Highway to Hell", "AC/DC");
-  print_list(list);/*
+  print_list(list);
   printf("\nRemoving 'American Idiot'...\n");
   list = remove_song_node(list, "American Idiot", "Green Day");
   printf("\nRemoving 'Something Good Can Work'...\n");
   list = remove_song_node(list, "Something Good Can Work", "Two Door Cinema Club");
-  print_list(list);*/
+  print_list(list);
   
   printf("\nRemoving nonexistent name 'Hello'...\n");
   list = remove_song_node(list, "Hello", "LOLOALDAOPWDNSBGERJNREK");
@@ -145,5 +145,5 @@ int main() {
   list = free_list(list);
   print_list(list);
   return 0;
-}
+}*/
 

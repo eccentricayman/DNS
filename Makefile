@@ -1,14 +1,12 @@
-GCC = gcc -g
+GCC = gcc -g -c
 
-compile: songs.c playlists.c
-	gcc NOTspotify.c songs.c -o DefinetelyNotSpotify
+compile: songs.h playlist.h songs.c playlist.c main.c songs.o playlist.o
+	$(GCC) songs.c playlist.c
+	gcc -g -o DefinitelyNotSpotify main.c songs.o playlist.o
+	./DefinitelyNotSpotify
 
 clean:
-	rm -rf DefinetelyNotSpotify
-	rm -rf *~
-
-run:
-	./DefinetelyNotSpotify
+	rm *~
 
 debug:
-	gcc NOTspotify.c -g -o DefinetelyNotSpotify
+	gcc NOTspotify.c -g -o DefinitelyNotSpotify

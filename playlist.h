@@ -2,14 +2,18 @@
 
 song_node * add_song(char songName[], char artistName[]);
 
+song_node * search_song(char songName[]);
+
 song_node * search_artist(char artistName[]);
 
 void print_entry(char letter);
 
 void print_artist_songs(char artistName[]);
 
-void shuffle(song_node * start);
+void print_library();
 
-song_node * remove_song(song_node * start, song_node * toRemove);
+void shuffle();
 
-void remove_all(song_node * start);
+void remove_song(char songName[]);
+
+void remove_all();
